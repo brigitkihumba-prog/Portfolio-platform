@@ -1,15 +1,14 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
 
-function Project() {
+export default function Project({ id, title, description }) {
   return (
-    <>
-    <div>
-        <h1>Project List</h1>
+    <div className="project-item">
+      <div className="project-icon">📁</div>
+      <div className="project-details">
+        <h3>{title}</h3>
+        <p>{description.substring(0, 60)}...</p>
+        <Link to={`/project/${id}`} className="view-link">View Details &rarr;</Link>
+      </div>
     </div>
-
-    </>
-    
-  )
+  );
 }
-
-export default Project

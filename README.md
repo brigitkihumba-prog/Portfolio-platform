@@ -14,3 +14,20 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+# Personal Project Showcase
+
+A modern Single Page Application (SPA) built with React and Vite to dynamically display, add, and filter portfolio projects.
+
+## Component Tree
+```text
+App (Holds `projects` & `searchTerm` state)
+ ├── Header
+ ├── Routes
+ │    ├── Route ("/")
+ │    │    ├── AddProject (Local state: `title`, `description`. Handles validation)
+ │    │    ├── SearchBar (Controlled input updating `searchTerm`)
+ │    │    └── ProjectList (Receives filtered projects)
+ │    │         └── Project (Maps individual items)
+ │    └── Route ("/project/:id")
+ │         └── ProjectDetails (Displays full info via URL params)h
