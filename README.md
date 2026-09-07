@@ -1,102 +1,94 @@
-# React + Vite
+# Portfolio Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic Single Page Application (SPA) Built With React, Vite, CSS, and React Router
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-# Personal Project Showcase
-
-A modern Single Page Application (SPA) built with React and Vite to dynamically display, add, and filter portfolio projects.
-
-## Component Tree
-```text
-App (Holds `projects` & `searchTerm` state)
- ├── Header
- ├── Routes
- │    ├── Route ("/")
- │    │    ├── AddProject (Local state: `title`, `description`. Handles validation)
- │    │    ├── SearchBar (Controlled input updating `searchTerm`)
- │    │    └── ProjectList (Receives filtered projects)
- │    │         └── Project (Maps individual items)
- │    └── Route ("/project/:id")
- │         └── ProjectDetails (Displays full info via URL params)
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Last Commit](https://img.shields.io/badge/Last%20Commit-2026%20Update-brightgreen)]()
 
 ## Table of Contents
 
-Overview
-Features
-Live Demo
-Local Setup
-Technologies Used
-Contact
-Roadmap
-License
+- [Overview](#overview)
+- [Features](#features)
+- [Live Demo](#live-demo)
+- [Local Setup](#local-setup)
+- [Technologies Used](#technologies-used)
+- [Contact](#contact)
+- [Roadmap](#roadmap)
+- [License](#license)
 
 ## Overview
-Portfolio Platform is a modern Single Page Application (SPA) built with React and Vite. It provides creative agencies, developers, and designers with an interactive showcase to display past work, dynamically add new portfolio projects, filter entries in real time, and navigate detailed project views using client-side routing.
+
+Portfolio Platform is a scalable, modern web presence designed for creative agencies and freelance developers. Built entirely as a Single Page Application (SPA), it solves the problem of manual portfolio updates by allowing administrators to dynamically inject new project items directly into a live feed. Clients can browse past work, search for specific keywords, and navigate through dedicated project detail pages seamlessly without ever reloading the browser.
+
+
 
 ## Features
-Browse a clean list of past and present personal projects
 
-Dynamically add new projects using an interactive form with built-in validation
-
-Search and filter projects in real time by title or keyword
-
-View detailed project pages using client-side routing 
-
-Enjoy a responsive, card-based layout designed to adapt across mobile and desktop screens
+ **Dynamic Portfolio Feed:** Automatically renders a clean list of project cards, complete with titles, descriptions, and dynamic data rendering.
+ **Real-Time Search & Filtering:** Evaluates user keystrokes instantly to filter projects across titles and descriptions using dynamic string matching.
+ **Interactive Form Submission:** A centralized submission interface allows for the addition of new projects, updating the application's global feed instantly.
+ **Client-Side Routing:** Leverages `react-router-dom` to provide seamless, flicker-free page transitions between the main portfolio landing page and dedicated project views (`/project/:id`).
+ **Robust Input Validation:** Form controls include sanitization logic (`String.prototype.trim()`) to prevent empty inputs or accidental whitespace submissions, paired with immediate user error feedback.
+ **Responsive Architecture:** Accessible styling built with flexible CSS layout models that adjust gracefully across mobile, tablet, and desktop viewports.
 
 ## Live Demo
-Open the app here:
+
+Open the application here:
 
 https://github.com/brigitkihumba-prog/Portfolio-platform.git
 
 ## Local Setup
 
-## Requirements
+### Requirements
+
 Node.js (v18.0 or higher)
-npm (Node Package Manager)
+ npm (Node Package Manager)
+ A modern web browser
+ Code editor (VS Code recommended)
 
 ### Installation
+
 1. Clone the repository:
+
    ```bash
-https://github.com/brigitkihumba-prog/Portfolio-platform.git
+   git clone https://github.com/brigitkihumba-prog/Portfolio-platform.git
 
-Navigate into the project folder:
-cd portfolio-platform
+2. Navigate into the project folder:
 
+   ```Bash
+cd Portfolio-platform
 Install project dependencies:
-```Bash
+
+  ```Bash
 npm install
 
- Open the app in your browser:
-   ```text
-  http://localhost:5173/
+```Bash
+npm run dev
+Open the app in your browser:
 
-  Technologies Used
-HTML5
-CSS3
+Plaintext
+http://localhost:5173
+
+
+Technologies Used
+HTML5 & CSS3
+
 JavaScript (ES6+)
-React
+
+React (Hooks, Context, Router)
+
 Vite
-React Router
+
+JSON Server (Simulated REST API)
 
 Roadmap
-Potential improvements for future versions:
+Potential improvements for future enterprise production iterations:
 
-Connect to a Node.js/Express backend API for asynchronous data fetching
+Backend API Integration: Replace local state initialization with asynchronous useEffect fetch requests connecting to a Node.js / Express backend server.
+
+CRUD Capabilities: Expand item controls to include update (edit) and delete action buttons on individual project items.
+
+Media Management: Integrate image upload support allowing users to attach custom thumbnails and screenshot galleries to each project.
 
 License
 MIT License
